@@ -17,10 +17,11 @@ const MaskedCursor = () => {
     const setFromEvent = (e) => {
     const x = e.clientX;
     const y = e.clientY;
+    const z = "0px";
 
     setMousePosition({ x, y });
 
-    if (x > window.innerWidth * 0.1) {
+    if (x > window.innerWidth * 0.58) {
         setIsHovered(true);
     } else {
         setIsHovered(false);
