@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import { motion } from "framer-motion"
 
-import photo1 from "../../assets/mjkidentity1.webp";
-import photo2 from "../../assets/mjkidentity2.webp";
+import photo1 from "../../assets/mjkidentity.avif";
+import photo2 from "../../assets/mjkidentity2.avif";
 import "./maskedcursor.css"
 
 
