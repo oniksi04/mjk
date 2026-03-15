@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: white;
+  background: #f4f5fb;
   font-family: sans-serif;
 }
 
@@ -14,3 +14,10 @@ body {
   position: relative;
 }
 
+@font-face {
+  font-family: 'Satoshi';
+  src: url('./assets/Poppins-Bold.ttf') format('truetype');
+  font-weight: medium;
+  font-style: normal;
+  font-display: swap;
+}
