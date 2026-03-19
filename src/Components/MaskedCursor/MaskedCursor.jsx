@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
-import photo1 from "../../assets/mjkidentity.avif";
-import photo2 from "../../assets/mjkidentity2.avif";
 import "./maskedcursor.css";
 
 const MaskedCursor = () => {
@@ -13,26 +10,21 @@ const MaskedCursor = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const setFromEvent = (e) => {
+    const handleMouseMove = (e) => {
       const x = e.clientX;
       const y = e.clientY;
 
       setMousePosition({ x, y });
-
-      if (x > window.innerWidth * 0.58) {
-        setIsHovered(true);
-      } else {
-        setIsHovered(false);
-      }
+      setIsHovered(x > window.innerWidth * 0.58);
     };
 
-    window.addEventListener('mousemove', setFromEvent);
-    return () => {
-      window.removeEventListener('mousemove', setFromEvent);
-    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const size = isHovered ? 450 : 30;
+  
+  const multiplier = window.innerWidth;
+  const size = isHovered ? 0.35*multiplier : 0.025*multiplier;
 
   const handleClick = () => {
     if (isHovered) {
@@ -44,15 +36,16 @@ const MaskedCursor = () => {
     <div className="container" onClick={handleClick}>
       <motion.div
         className="mask"
-        style={{ backgroundImage: `url(${photo1})` }}
         animate={{
-          WebkitMaskPosition: `${mousePosition.x - size / 2}px ${mousePosition.y - size / 2}px`,
-          WebkitMaskSize: `${size}px`
+          WebkitMaskPosition: `${mousePosition.x - size / 2}px ${
+            mousePosition.y - size / 2
+          }px`,
+          WebkitMaskSize: `${size}px`,
         }}
         transition={{ ease: "backOut", duration: 0.4 }}
       />
 
-      <div className="normal" style={{ backgroundImage: `url(${photo2})` }} />
+      <div className="normal" />
 
       {isHovered && (
         <div
@@ -70,5 +63,6 @@ const MaskedCursor = () => {
     </div>
   );
 };
+
 
 export default MaskedCursor;

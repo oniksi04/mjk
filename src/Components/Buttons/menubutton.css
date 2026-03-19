@@ -1,6 +1,6 @@
 .box-button {
   position: fixed;
-  left: 44px;           /* relative to screen width instead of 50px */
+  left: 7.8vh;           /* relative to screen width instead of 50px */
   z-index: 9999;
   cursor: pointer;
   border: 0.5vw solid black;      /* relative border size */

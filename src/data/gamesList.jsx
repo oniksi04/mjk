@@ -7,19 +7,19 @@ const games = [
   },
   {
     id: 2,
-    name: "Badge Guess",
+    name: "BadgeGuessr",
     description: "Identify the football club from its badge or crest.",
     difficulty: "Easy"
   },
   {
     id: 3,
-    name: "Kit Guess",
+    name: "KitGuessr",
     description: "Recognize the club by looking at its football kit.",
     difficulty: "Medium"
   },
   {
     id: 4,
-    name: "Career Path",
+    name: "Career Conundrum",
     description: "Guess the player based on the clubs they played for throughout their career.",
     difficulty: "Hard"
   },
@@ -31,7 +31,7 @@ const games = [
   },
   {
     id: 6,
-    name: "Stadium Guesser",
+    name: "StadiumGuessr",
     description: "Identify the football stadium based on an image or clue.",
     difficulty: "Medium"
   },
@@ -44,7 +44,7 @@ const games = [
   {
     id: 8,
     name: "Tenaball",
-    description: "A challenge to name ten valid football answers within a specific category before time runs out.",
+    description: "A challenge to name ten valid football answers within a specific category",
     difficulty: "Hard"
   }
 ];

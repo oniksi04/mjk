@@ -15,13 +15,12 @@ const SocialLinks = () => {
         bottom: "35px",
         left: "44px",
         display: "flex",
-        alignItems: "center",  // vertically centers the text with icons
+        alignItems: "center",
         gap: "20px",
         zIndex: 9999,
-        color: "#000"           // make sure text inherits color
+        color: "#000"
       }}
     >
-      {/* Render social icons */}
       {socials.map(({ id, href, icon, label }) => (
         <a 
           key={id} 

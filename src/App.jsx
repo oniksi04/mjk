@@ -2,12 +2,13 @@ import './App.css';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Progress from './Components/ProgressView/Progress';
-import Games from './Components/GamesView/Games';
+import Progress from './Views/ProgressView/Progress';
+import Games from './Views/GamesView/Games';
 import MaskedCursor from './Components/MaskedCursor/MaskedCursor';
-import SocialLinks from './Components/SocialLinks/SocialLinks';
+import SocialLinks from './Components/SocialLinks';
 import MenuButton from './Components/Buttons/MenuButton';
-import Shop from './Components/ShopView/Shop';
+import Shop from './Views/ShopView/Shop';
+import BadgeGuess from './Views/GamesView/GameComponents/BadgeGuess';
 
 function App() {
   const [cursorVisible, setCursorVisible] = useState(true);
@@ -23,7 +24,7 @@ function App() {
               <MenuButton
                 label="Games"
                 destination="/games"
-                topOffset="44px"
+                topOffset="7.8vh"
                 hideCursor={() => setCursorVisible(false)}
                 showCursor={() => setCursorVisible(true)}
               />
@@ -31,7 +32,7 @@ function App() {
               <MenuButton
                 label="Progress"
                 destination="/progress"
-                topOffset="190px"
+                topOffset="32vh"
                 hideCursor={() => setCursorVisible(false)}
                 showCursor={() => setCursorVisible(true)}
               />
@@ -45,6 +46,7 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/progress" element={<Progress />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/games/badge-guess" element={<BadgeGuess />} />
 
       </Routes>
     </div>
