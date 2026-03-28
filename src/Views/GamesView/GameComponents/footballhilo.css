@@ -1,0 +1,237 @@
+/* ─── Page ──────────────────────────────────────────────── */
+.hilo-page {
+  width: 100vw;
+  height: 100vh;
+  background: #f4f5fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5vh;
+  box-sizing: border-box;
+  padding: 2vh 2vw;
+  overflow: hidden;
+}
+
+/* ─── Header ────────────────────────────────────────────── */
+.hilo-header {
+  text-align: center;
+}
+
+.hilo-title {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 0.3vw;
+  text-transform: uppercase;
+  color: #111;
+  margin: 0;
+  line-height: 1;
+}
+
+.hilo-category {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.7rem, 1vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.2vw;
+  text-transform: uppercase;
+  color: #757de8;
+  margin: 0.4vh 0 0 0;
+}
+
+/* ─── Lives ─────────────────────────────────────────────── */
+.hilo-lives {
+  display: flex;
+  gap: 0.8vw;
+  align-items: center;
+}
+
+.hilo-life {
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  transition: color 0.2s;
+}
+
+.hilo-life--active {
+  color: #757de8;
+}
+
+.hilo-life--lost {
+  color: #ddd;
+}
+
+/* ─── Arena ─────────────────────────────────────────────── */
+.hilo-arena {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  max-width: 860px;
+  height: clamp(280px, 46vh, 420px);
+  border: 0.3vw solid #111;
+  box-shadow: 0.5vw 0.5vw 0 #111;
+  overflow: hidden;
+}
+
+/* ─── Card ──────────────────────────────────────────────── */
+.hilo-card {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.hilo-card__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: brightness(0.52);
+}
+
+/* ─── Overlay ───────────────────────────────────────────── */
+.hilo-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6vh;
+  padding: 1.5vw;
+  text-align: center;
+}
+
+.hilo-card__name {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  line-height: 1.1;
+}
+
+.hilo-card__stat-label {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.6rem, 0.85vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.08vw;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+.hilo-card__stat-value {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.9rem);
+  font-weight: 900;
+  color: #757de8;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ─── Buttons ───────────────────────────────────────────── */
+.hilo-card__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  margin: 0.5vh 0;
+}
+
+.hilo-btn {
+  all: unset;
+  cursor: pointer;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.7rem, 0.95vw, 0.9rem);
+  font-weight: 900;
+  letter-spacing: 0.2vw;
+  text-transform: uppercase;
+  padding: 0.8vh 2vw;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(4px);
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+  text-align: center;
+  min-width: 120px;
+}
+
+/* Higher button — blue accent */
+.hilo-btn--higher {
+  color: #757de8;
+  border: 0.2vw solid #757de8;
+}
+
+.hilo-btn--higher:hover:not(:disabled) {
+  background: #757de8;
+  color: #fff;
+}
+
+/* Lower button — red accent */
+.hilo-btn--lower {
+  color: #e84141;
+  border: 0.2vw solid #e84141;
+}
+
+.hilo-btn--lower:hover:not(:disabled) {
+  background: #e84141;
+  color: #fff;
+}
+
+.hilo-btn:active:not(:disabled) {
+  opacity: 0.8;
+}
+
+.hilo-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* ─── VS Divider ────────────────────────────────────────── */
+.hilo-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-left: 0.3vw solid #111;
+  border-right: 0.3vw solid #111;
+  padding: 0 1vw;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.hilo-vs span {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+  font-weight: 900;
+  letter-spacing: 0.2vw;
+  color: #111;
+}
+
+/* ─── Progress Bar ──────────────────────────────────────── */
+.hilo-progress {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+  width: 100%;
+  max-width: 860px;
+}
+
+.hilo-progress__track {
+  flex: 1;
+  height: clamp(8px, 1vh, 14px);
+  background: #ddd;
+  border: 0.2vw solid #111;
+  overflow: hidden;
+}
+
+.hilo-progress__fill {
+  height: 100%;
+  background: #757de8;
+  transition: width 0.35s ease;
+}
+
+.hilo-progress__count {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.65rem, 0.85vw, 0.82rem);
+  font-weight: 900;
+  letter-spacing: 0.15vw;
+  color: #111;
+  white-space: nowrap;
+}

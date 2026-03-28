@@ -1,22 +1,28 @@
-/* Remove default browser spacing */
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background: #f4f5fb;
   font-family: sans-serif;
+  /* overflow: hidden removed — it was killing scroll on all pages */
 }
 
-/* Root app wrapper */
 .App {
   width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Landing page specifically needs overflow hidden (masked cursor effect) */
+.app-container {
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
   position: relative;
 }
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('./assets/Poppins-Bold.ttf') format('truetype');
+  src: url('/public/assets/Poppins-Bold.ttf') format('truetype');
   font-weight: medium;
   font-style: normal;
   font-display: swap;

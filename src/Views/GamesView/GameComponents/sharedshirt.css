@@ -1,0 +1,77 @@
+/* ─── Hint ──────────────────────────────────────────────── */
+.ss-hint {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.15vw;
+  text-transform: uppercase;
+  color: #555;
+  margin: 0 0 1vh 0;
+  text-align: center;
+}
+
+/* ─── Clubs Row ─────────────────────────────────────────── */
+.ss-clubs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  width: 100%;
+  margin-bottom: 2vh;
+}
+
+/* ─── Single Club ───────────────────────────────────────── */
+.ss-club {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vh;
+}
+
+/* ─── Badge ─────────────────────────────────────────────── */
+.ss-club__badge {
+  width: clamp(80px, 10vw, 130px);
+  height: clamp(80px, 10vw, 130px);
+  border: 0.3vw solid #111;
+  box-shadow: 0.4vw 0.4vw 0 #111;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ss-club__badge img {
+  width: 120%;
+  height: 120%;
+  object-fit: contain;
+}
+
+.ss-club__initial {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 900;
+  color: #757de8;
+  text-transform: uppercase;
+}
+
+/* ─── Club Name ─────────────────────────────────────────── */
+.ss-club__name {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
+  font-weight: 900;
+  letter-spacing: 0.15vw;
+  text-transform: uppercase;
+  color: #111;
+  text-align: center;
+}
+
+/* ─── VS Divider ────────────────────────────────────────── */
+.ss-vs {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: #757de8;
+  user-select: none;
+  line-height: 1;
+}

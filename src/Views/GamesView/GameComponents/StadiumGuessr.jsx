@@ -7,8 +7,8 @@ import Autocomplete, { filterSuggestions } from "../../../Components/AutoComplet
 import LockoutScreen from "../../../Components/LockoutScreen";
 import GameToast from "../../../Components/GameToast/GameToast";
 
-const BadgeGuess = () => {
-  const { hasPlayed, result, lockGame } = useDailyLockout("badgeGuess");
+const StadiumGuessr = () => {
+  const { hasPlayed, result, lockGame } = useDailyLockout("stadiumGuessr");
   const [guess, setGuess] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [toast, setToast] = useState({ visible: false, type: null });
@@ -34,12 +34,17 @@ const BadgeGuess = () => {
     showToast(isCorrect ? "correct" : "wrong");
   };
 
-  if (hasPlayed) return <LockoutScreen gameName="BadgeGuessr" result={result} />;
+  if (hasPlayed) return <LockoutScreen gameName="StadiumGuessr" result={result} />;
 
   return (
-    <GameLayout title="BadgeGuessr">
+    <GameLayout title="StadiumGuessr">
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-        <img src={currentTeam.crest.blurred} alt="Badge" style={{ width: "350px" }} />
+        {/* stadium.image is the path, stadium.name is the label */}
+        <img
+          src={currentTeam.stadium.image}
+          alt={currentTeam.stadium.name}
+          style={{ width: "350px" }}
+        />
       </div>
       <Autocomplete
         value={guess}
@@ -55,4 +60,4 @@ const BadgeGuess = () => {
   );
 };
 
-export default BadgeGuess;
+export default StadiumGuessr;

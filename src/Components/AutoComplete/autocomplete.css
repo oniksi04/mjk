@@ -1,0 +1,118 @@
+/* ─── Form ──────────────────────────────────────────────── */
+.ac-form {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ─── Input Row ─────────────────────────────────────────── */
+.ac-input-group {
+  display: flex;
+  width: 100%;
+}
+
+.ac-input {
+  flex: 1;
+  padding: 1.1vh 1vw;
+  border: 0.25vw solid #111;
+  border-right: none;
+  background: #fff;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.85rem, 1.1vw, 1rem);
+  font-weight: 700;
+  color: #111;
+  outline: none;
+  border-radius: 0;
+  letter-spacing: 0.05vw;
+  transition: background 0.1s;
+}
+
+.ac-input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
+  font-size: clamp(0.7rem, 0.85vw, 0.85rem);
+}
+
+.ac-input:focus {
+  background: #f4f5fb;
+}
+
+/* ─── Submit Button ─────────────────────────────────────── */
+.ac-submit-btn {
+  padding: 1.1vh 1.5vw;
+  background: #111;
+  color: #f4f5fb;
+  border: 0.25vw solid #111;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.7rem, 0.85vw, 0.85rem);
+  font-weight: 900;
+  letter-spacing: 0.2vw;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+  box-shadow: 0.3vw 0.3vw 0 #757de8;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  white-space: nowrap;
+}
+
+.ac-submit-btn:hover:not(:disabled) {
+  transform: translate(-0.1vw, -0.1vw);
+  box-shadow: 0.4vw 0.4vw 0 #757de8;
+}
+
+.ac-submit-btn:active:not(:disabled) {
+  transform: translate(0.15vw, 0.15vw);
+  box-shadow: 0.1vw 0.1vw 0 #757de8;
+}
+
+.ac-submit-btn:disabled {
+  background: #555;
+  border-color: #555;
+  box-shadow: 0.3vw 0.3vw 0 #ccc;
+  cursor: default;
+}
+
+/* ─── Suggestions ───────────────────────────────────────── */
+.ac-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 0.25vw solid #111;
+  border-top: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0.4vw 0.4vw 0 #111;
+  z-index: 100;
+  overflow: hidden;
+}
+
+/* ─── Suggestion Items ──────────────────────────────────── */
+.ac-suggestion-item {
+  padding: 1vh 1vw;
+  cursor: pointer;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.05vw;
+  color: #111;
+  border-bottom: 0.15vw solid #ddd;
+  transition: background 0.08s, color 0.08s;
+  text-transform: uppercase;
+}
+
+.ac-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.ac-suggestion-item:hover {
+  background: #757de8;
+  color: #fff;
+}
